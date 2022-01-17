@@ -17,19 +17,22 @@
     <div id="app">
         <div class="container">
 
-            <div class="text-center">
+            <div class="text-center buttons">
                 <input type="text" v-model="inputText.text" @keyup.enter="addItemText">
                 <button @click="addItemText">Aggiungi</button>
             </div>
 
     
-            <div class="list-container">
+            <div class="container list">
                 <ul>
                     
-                    <li @click="toDoComplete(i)" :class="flagStrike(i)"
-                        v-for="(lists, i) in list">
+                    <li v-for="(lists, i) in list" :class="flagStrike(i)">
+                        <span @click="toDoComplete(i)">{{ list[i].text }}</span>
+                        <div class="close">
+                            <i @click="taskRemove(i)" class="fas fa-times"></i>
+                        </div>
+                        
 
-                        {{ list[i].text }}
                     </li>
                 </ul>
             </div>

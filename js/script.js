@@ -31,12 +31,12 @@ new Vue({
         addItemText: function() {
             if(this.inputText.text !== '') {
                 this.list.push(this.inputText);
+                this.inputText = {
+                    text: '',
+                    done: false,
+                }
             }
 
-            this.inputText = {
-                text: '',
-                done: false,
-            }
         },
         //aggiungi la classe strike solo se True
         flagStrike: function (i) {
@@ -53,6 +53,10 @@ new Vue({
         toDoComplete: function(i) {
             this.list[i].done = !this.list[i].done;
 
+        },
+        // lo splice funziona anche senza specificare il counter
+        taskRemove: function(i) {
+            this.list.splice(i);
         }
 
             
