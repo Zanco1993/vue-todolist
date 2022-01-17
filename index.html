@@ -25,7 +25,10 @@
     
             <div class="list-container">
                 <ul>
-                    <li @click="toDoComplete" v-for="(lists, i) in list">
+                    
+                    <li @click="toDoComplete(i)" :class="flagStrike(i)"
+                        v-for="(lists, i) in list">
+
                         {{ list[i].text }}
                     </li>
                 </ul>

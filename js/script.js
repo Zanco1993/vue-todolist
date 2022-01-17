@@ -23,6 +23,8 @@ new Vue({
             text: '',
             done: false,
         },
+
+        currentIndex: 0,
     }, 
     
     methods: {
@@ -33,11 +35,26 @@ new Vue({
                 done: false,
             }
         },
-        toDoComplete: function (i) {
+        //aggiungi la classe strike solo se True
+        flagStrike: function (i) {
+            let classes = '';
+            if(this.list[i].done === true) {
+                classes = 'strike';
+            } else {
+                classes = '';
+            }
 
-            this.list[i].done = true;
-            
+            return classes
+        },
+        // cambia da true a false in base al suo stato
+        toDoComplete: function(i) {
+            this.list[i].done = !this.list[i].done;
+
         }
+
+            
+
+
 
 
     }
