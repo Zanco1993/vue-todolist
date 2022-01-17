@@ -29,7 +29,10 @@ new Vue({
     
     methods: {
         addItemText: function() {
-            this.list.push(this.inputText);
+            if(this.inputText.text !== '') {
+                this.list.push(this.inputText);
+            }
+
             this.inputText = {
                 text: '',
                 done: false,
