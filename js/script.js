@@ -54,9 +54,9 @@ new Vue({
             this.list[i].done = !this.list[i].done;
 
         },
-        // lo splice funziona anche senza specificare il counter
+        
         taskRemove: function(i) {
-            this.list.splice(i);
+            this.list.splice(i, 1);
         }
 
             
