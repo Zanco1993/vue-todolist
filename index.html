@@ -27,7 +27,8 @@
                 <ul>
                     
                     <li v-for="(lists, i) in list" :class="flagStrike(i)">
-                        <span @click="toDoComplete(i)">{{ list[i].text }}</span>
+                        <!-- <span @click="toDoComplete(i)">{{ lists.text }}</span> -->
+                        <span @click="toDoComplete(lists)">{{ lists.text }}</span>
                         <div class="close">
                             <i @click="taskRemove(i)" class="fas fa-times"></i>
                         </div>

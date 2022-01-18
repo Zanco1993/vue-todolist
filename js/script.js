@@ -50,8 +50,8 @@ new Vue({
             return classes
         },
         // cambia da true a false in base al suo stato
-        toDoComplete: function(i) {
-            this.list[i].done = !this.list[i].done;
+        toDoComplete: function(lists) {
+            lists.done = !lists.done;
 
         },
         
